@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
+import { NewsletterForm } from '../components/NewsletterForm';
 
 const issues = [
   {
@@ -50,14 +51,13 @@ export default function DailyPage() {
               <h1>One quick <span className="lime-text">aha.</span><br />No rewards rabbit hole.</h1>
               <p className="hero-copy">Know what changed, what it could be worth, and the one useful action to remember—before your day gets busy.</p>
             </div>
-            <form className="signup-panel">
-              <p className="eyebrow">Free every morning</p>
-              <h2>Start with tomorrow’s aha.</h2>
-              <label htmlFor="daily-email">Email address</label>
-              <input id="daily-email" type="email" placeholder="you@email.com" required />
-              <button type="submit">Get the Daily</button>
-              <small>No spam. Unsubscribe anytime.</small>
-            </form>
+            <NewsletterForm
+              className="signup-panel"
+              inputId="daily-email"
+              eyebrow="Free every morning"
+              heading="Start with tomorrow’s aha."
+              note="No spam. Unsubscribe anytime."
+            />
           </div>
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function DailyPage() {
       <section className="conversion-band">
         <div className="page-wrap conversion-inner">
           <div><p className="marker-hook">did juno<span>?</span></p><h2>Tomorrow’s aha takes five minutes.</h2></div>
-          <form className="band-form"><input aria-label="Email address" type="email" placeholder="you@email.com" required /><button type="submit">Get the Daily</button></form>
+          <NewsletterForm className="band-form" inputId="band-email" />
         </div>
       </section>
       <SiteFooter />

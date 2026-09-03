@@ -103,6 +103,11 @@ button, input { font: inherit; }
 .signup-panel input:focus, .band-form input:focus, .intake-form > input:focus { border-color: var(--aubergine); box-shadow: 0 0 0 3px rgba(53,27,73,.10); }
 .signup-panel button, .band-form button, .intake-form > button { width: 100%; margin-top: 11px; border: 0; border-radius: 12px; padding: 14px 18px; font-weight: 900; color: var(--deep); background: var(--lime); cursor: pointer; }
 .signup-panel small { display: block; color: var(--muted-light); text-align: center; margin-top: 11px; }
+.honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; }
+.form-error { color: #9f2539 !important; font-size: 13px !important; line-height: 1.4 !important; margin: 10px 0 0 !important; }
+.form-result.success { color: var(--deep); background: var(--lime); border-radius: 14px; padding: 16px 18px; font-weight: 800; line-height: 1.4; }
+.signup-panel.form-result.success { display: grid; place-items: center; min-height: 220px; text-align: center; }
+.band-form.form-result.success { display: block; }
 .light-section { padding: 92px 0; background: var(--warm); }
 .section-heading { max-width: 780px; margin-bottom: 40px; }
 .section-heading.narrow { max-width: 680px; }
@@ -175,6 +180,13 @@ button, input { font: inherit; }
 .intake-form { color: var(--deep); background: var(--warm); border-radius: 22px; padding: 30px; }
 .intake-form > input { margin-bottom: 16px; }
 .intake-form input[type=file] { background: white; font-size: 13px; }
+.intake-form .file-input { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.file-picker { display: grid; place-items: center; min-height: 74px; border: 1px dashed #b9aac3; border-radius: 12px; background: white; color: var(--muted-light); cursor: pointer; padding: 15px; text-align: center; transition: border-color .2s, background .2s; }
+.file-picker:hover { border-color: var(--aubergine); background: #fffdf8; }
+.file-note { color: var(--muted-light); font-size: 12px; margin: 7px 0 16px; }
+.intake-form.form-result.success { display: block; background: var(--lime); min-height: 190px; padding: 38px; }
+.intake-form.form-result.success strong { display: block; font-size: 30px; letter-spacing: -.04em; }
+.intake-form.form-result.success p { margin-bottom: 0; }
 .consent-check { display: flex; gap: 10px; align-items: flex-start; color: var(--muted-light); font-size: 12px; line-height: 1.45; margin-top: 4px; }
 .consent-check input { accent-color: var(--aubergine); margin-top: 3px; }
 .consent-check a { color: var(--deep); text-decoration: underline; }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
+import { RematchForm } from '../components/RematchForm';
 
 export default function RematchPage() {
   return (
@@ -66,17 +67,7 @@ export default function RematchPage() {
             <p>Share only what is needed for the review. Before uploading, remove full card numbers, security codes, bank login details, Social Security numbers, or other information unrelated to your transactions.</p>
             <Link className="data-link" href="/data-terms">Read the beta data terms →</Link>
           </div>
-          <form className="intake-form">
-            <label htmlFor="full-name">Name</label>
-            <input id="full-name" name="name" type="text" placeholder="Your name" required />
-            <label htmlFor="rematch-email">Email</label>
-            <input id="rematch-email" name="email" type="email" placeholder="you@email.com" required />
-            <label htmlFor="statements">Recent statement files</label>
-            <input id="statements" name="statements" type="file" accept=".pdf,image/*" multiple required />
-            <label className="consent-check"><input type="checkbox" required /><span>I have read and agree to the <Link href="/data-terms">beta data terms</Link>.</span></label>
-            <button type="submit">Submit my Rematch</button>
-            <small>By submitting, you confirm the files are yours to share. Beta processing is completed by the didjuno team.</small>
-          </form>
+          <RematchForm />
         </div>
       </section>
       <SiteFooter />

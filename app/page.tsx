@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { NewsletterForm } from './components/NewsletterForm';
 
 function Brand() {
   return (
@@ -33,11 +34,7 @@ export default function HomePage() {
             <p className="eyebrow">Every morning · under 5 minutes</p>
             <h2>Get one useful <span className="aha">aha</span> before your day starts.</h2>
             <p>What changed, what it could be worth, and the one action to remember.</p>
-            <form className="mini-signup" action="/daily">
-              <label className="sr-only" htmlFor="home-email">Email address</label>
-              <input id="home-email" type="email" placeholder="you@email.com" required />
-              <button type="submit">Get the Daily</button>
-            </form>
+            <NewsletterForm className="mini-signup" inputId="home-email" />
             <Link className="text-link" href="/daily">See the newsletter →</Link>
           </article>
 
