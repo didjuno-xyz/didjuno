@@ -36,6 +36,13 @@ const issues = [
     body: 'Unused rideshare and hotel credits were counted at zero. The honest value of a card is what you actually use.',
     takeaway: 'Aha: audit your renewal with your behavior, not the brochure.',
   },
+  {
+    tag: 'TEST IT',
+    kicker: 'GitHub workflow check',
+    title: <>This card confirms the <mark>publish pipeline</mark> works end to end.</>,
+    body: 'A small test post added to verify commits from here can reach the didjuno-xyz/didjuno repo and show up on the live site.',
+    takeaway: 'Aha: safe to remove once the workflow is confirmed.',
+  },
 ];
 
 export default function DailyPage() {
