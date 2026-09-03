@@ -7,6 +7,7 @@ const newsreader = Newsreader({ subsets: ['latin'], variable: '--font-newsreader
 const marker = Permanent_Marker({ subsets: ['latin'], weight: '400', variable: '--font-marker' });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.URL || 'https://didjuno.xyz'),
   title: 'didjuno — know what changed, know what you’re missing',
   description: 'A five-minute daily briefing and a personalized spending Rematch for points, card benefits, cash back, and smarter travel.',
   icons: { icon: '/favicon.svg' },
