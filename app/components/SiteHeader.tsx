@@ -14,7 +14,7 @@ export function SiteHeader({ dark = false }: { dark?: boolean }) {
     <nav className={`site-nav ${dark ? 'nav-dark' : 'nav-light'}`}>
       <Brand />
       <div className="nav-links">
-        <Link href="/daily">The Daily</Link>
+        <Link href="/weekly">The Weekly</Link>
         <Link href="/rematch">Rematch</Link>
         <Link href="/data-terms">Data terms</Link>
       </div>

@@ -11,7 +11,7 @@ export function SiteFooter() {
       <div className="footer-links">
         <div>
           <strong>Explore</strong>
-          <Link href="/daily">The Daily</Link>
+          <Link href="/weekly">The Weekly</Link>
           <Link href="/rematch">Rematch</Link>
           <Link href="/data-terms">Data terms</Link>
         </div>

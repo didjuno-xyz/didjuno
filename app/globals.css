@@ -49,8 +49,8 @@ button, input { font: inherit; }
 .choice-card .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-weight: 800; font-size: 11px; margin: 0 0 14px; }
 .choice-card h2 { font-size: clamp(27px, 3vw, 39px); line-height: 1.06; letter-spacing: -.04em; margin: 0; }
 .choice-card > p:not(.eyebrow) { font-size: 16px; line-height: 1.55; margin: 17px 0 24px; }
-.daily-card { background: var(--warm); color: var(--deep); }
-.daily-card .eyebrow, .daily-card > p { color: var(--muted-light); }
+.weekly-card { background: var(--warm); color: var(--deep); }
+.weekly-card .eyebrow, .weekly-card > p { color: var(--muted-light); }
 .aha { color: var(--deep); background: var(--lime); border-radius: .2em; padding: 0 .15em .05em; }
 .rematch-card { background: rgba(36,16,47,.72); border: 1px solid rgba(247,243,232,.2); }
 .rematch-card .eyebrow, .rematch-card > p { color: var(--muted-dark); }
