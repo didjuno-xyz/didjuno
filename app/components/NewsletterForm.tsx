@@ -47,7 +47,7 @@ export function NewsletterForm({ className, inputId, heading, eyebrow, note }: P
       <label className={className === 'signup-panel' ? '' : 'sr-only'} htmlFor={inputId}>Email address</label>
       <input id={inputId} type="email" placeholder="you@email.com" value={email} onChange={(event) => setEmail(event.target.value)} required />
       <input className="honeypot" type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-      <button type="submit" disabled={status === 'submitting'}>{status === 'submitting' ? 'Joining…' : 'Get the Daily'}</button>
+      <button type="submit" disabled={status === 'submitting'}>{status === 'submitting' ? 'Joining…' : 'Get the Weekly'}</button>
       {note && <small>{note}</small>}
       {status === 'error' && <p className="form-error" role="alert">{message}</p>}
     </form>

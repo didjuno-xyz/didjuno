@@ -45,7 +45,7 @@ const issues = [
   },
 ];
 
-export default function DailyPage() {
+export default function WeeklyPage() {
   return (
     <main>
       <section className="dark-hero compact-hero">
@@ -54,15 +54,15 @@ export default function DailyPage() {
           <div className="split-hero">
             <div>
               <p className="marker-hook">did juno<span>?</span></p>
-              <p className="section-label lime-label">THE FIVE-MINUTE DAILY</p>
+              <p className="section-label lime-label">THE FIVE-MINUTE WEEKLY</p>
               <h1>One quick <span className="lime-text">aha.</span><br />No rewards rabbit hole.</h1>
-              <p className="hero-copy">Know what changed, what it could be worth, and the one useful action to remember—before your day gets busy.</p>
+              <p className="hero-copy">Know what changed, what it could be worth, and the one useful action to remember—before the week gets busy.</p>
             </div>
             <NewsletterForm
               className="signup-panel"
-              inputId="daily-email"
-              eyebrow="Free every morning"
-              heading="Start with tomorrow’s aha."
+              inputId="weekly-email"
+              eyebrow="Free every week"
+              heading="Start with next week’s aha."
               note="No spam. Unsubscribe anytime."
             />
           </div>
@@ -101,7 +101,7 @@ export default function DailyPage() {
 
       <section className="conversion-band">
         <div className="page-wrap conversion-inner">
-          <div><p className="marker-hook">did juno<span>?</span></p><h2>Tomorrow’s aha takes five minutes.</h2></div>
+          <div><p className="marker-hook">did juno<span>?</span></p><h2>Next week’s aha takes five minutes.</h2></div>
           <NewsletterForm className="band-form" inputId="band-email" />
         </div>
       </section>

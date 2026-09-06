@@ -9,17 +9,17 @@ const marker = Permanent_Marker({ subsets: ['latin'], weight: '400', variable: '
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.URL || 'https://didjuno.xyz'),
   title: 'didjuno — know what changed, know what you’re missing',
-  description: 'A five-minute daily briefing and a personalized spending Rematch for points, card benefits, cash back, and smarter travel.',
+  description: 'A five-minute weekly briefing and a personalized spending Rematch for points, card benefits, cash back, and smarter travel.',
   icons: { icon: '/favicon.svg' },
   openGraph: {
     title: 'didjuno — know what changed, know what you’re missing',
-    description: 'The five-minute Daily + personalized Rematch.',
+    description: 'The five-minute Weekly + personalized Rematch.',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'didjuno — Know what changed. Know what you’re missing.' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'didjuno — know what changed, know what you’re missing',
-    description: 'The five-minute Daily + personalized Rematch.',
+    description: 'The five-minute Weekly + personalized Rematch.',
     images: ['/og.png'],
   },
 };

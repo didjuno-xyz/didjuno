@@ -17,7 +17,7 @@ export default function HomePage() {
         <nav className="site-nav">
           <Brand />
           <div className="nav-links">
-            <Link href="/daily">The Daily</Link>
+            <Link href="/weekly">The Weekly</Link>
             <Link href="/rematch">Rematch</Link>
             <Link href="/data-terms">Data terms</Link>
           </div>
@@ -30,12 +30,12 @@ export default function HomePage() {
         </div>
 
         <div className="choice-grid" aria-label="Choose how didjuno helps">
-          <article className="choice-card daily-card">
-            <p className="eyebrow">Every morning · under 5 minutes</p>
+          <article className="choice-card weekly-card">
+            <p className="eyebrow">Every week · under 5 minutes</p>
             <h2>Get one useful <span className="aha">aha</span> before your day starts.</h2>
             <p>What changed, what it could be worth, and the one action to remember.</p>
             <NewsletterForm className="mini-signup" inputId="home-email" />
-            <Link className="text-link" href="/daily">See the newsletter →</Link>
+            <Link className="text-link" href="/weekly">See the newsletter →</Link>
           </article>
 
           <article className="choice-card rematch-card">
