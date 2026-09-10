@@ -37,11 +37,11 @@ const issues = [
     takeaway: 'Aha: audit your renewal with your behavior, not the brochure.',
   },
   {
-    tag: 'TEST IT',
-    kicker: 'GitHub workflow check',
-    title: <>This card confirms the <mark>publish pipeline</mark> works end to end.</>,
-    body: 'A small test post added to verify commits from here can reach the didjuno-xyz/didjuno repo and show up on the live site.',
-    takeaway: 'Aha: safe to remove once the workflow is confirmed.',
+    tag: 'BOOK IT',
+    kicker: 'Marriott free-night certificate',
+    title: <>An about-to-expire certificate covered a room worth roughly <mark>$500–$600</mark>.</>,
+    body: 'A Chase free-night certificate days from expiring, boosted with 20K points, booked a Westin connected to the Detroit airport terminal — turning a red-eye pickup into a 10-minute walk instead of a 4am drive.',
+    takeaway: 'Aha: check an expiring certificate before you cancel a card for “no value.”',
   },
 ];
 
@@ -73,7 +73,7 @@ export default function WeeklyPage() {
         <div className="page-wrap">
           <div className="section-heading">
             <p className="section-label">WHAT IT LOOKS LIKE</p>
-            <h2>Four quick hits. Four useful habits.</h2>
+            <h2>Five quick hits. Five useful habits.</h2>
             <p>Real examples, compressed to the part worth remembering. Lime means didjuno found the value.</p>
           </div>
           <div className="issue-grid">
