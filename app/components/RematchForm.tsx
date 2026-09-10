@@ -5,22 +5,51 @@ import { FormEvent, useRef, useState } from 'react';
 
 export function RematchForm() {
   const formRef = useRef<HTMLFormElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
-  const [fileLabel, setFileLabel] = useState('Choose PDF or CSV files');
+  const [files, setFiles] = useState<File[]>([]);
+
+  function syncFileInput(nextFiles: File[]) {
+    const input = fileInputRef.current;
+    if (!input) return;
+    const transfer = new DataTransfer();
+    nextFiles.forEach((file) => transfer.items.add(file));
+    input.files = transfer.files;
+  }
+
+  function addFiles(newFiles: File[]) {
+    setFiles((current) => {
+      const merged = [...current, ...newFiles].filter(
+        (file, index, all) => all.findIndex((f) => f.name === file.name && f.size === file.size) === index,
+      );
+      syncFileInput(merged);
+      return merged;
+    });
+  }
+
+  function removeFile(index: number) {
+    setFiles((current) => {
+      const next = current.filter((_, i) => i !== index);
+      syncFileInput(next);
+      return next;
+    });
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = formRef.current;
     if (!form) return;
-    const data = new FormData(form);
-    const files = data.getAll('files').filter((item): item is File => item instanceof File && item.size > 0);
     const total = files.reduce((sum, file) => sum + file.size, 0);
     if (!files.length || total > 4 * 1024 * 1024) {
       setStatus('error');
       setMessage(!files.length ? 'Attach at least one PDF or CSV statement.' : 'Your files must be 4 MB or less in total.');
       return;
     }
+
+    const data = new FormData(form);
+    data.delete('files');
+    files.forEach((file) => data.append('files', file));
 
     setStatus('submitting');
     setMessage('');
@@ -29,7 +58,8 @@ export function RematchForm() {
       const result = await response.json() as { error?: string };
       if (!response.ok) throw new Error(result.error || 'Something went wrong.');
       form.reset();
-      setFileLabel('Choose PDF or CSV files');
+      setFiles([]);
+      syncFileInput([]);
       setStatus('success');
       setMessage('Your Rematch is in. Check your email for confirmation.');
     } catch (error) {
@@ -54,20 +84,35 @@ export function RematchForm() {
       <label htmlFor="rematch-email">Email</label>
       <input id="rematch-email" name="email" type="email" placeholder="you@email.com" required />
       <label htmlFor="statements">Recent statement files</label>
-      <label className="file-picker" htmlFor="statements">{fileLabel}</label>
+      <label className="file-picker" htmlFor="statements">
+        {files.length ? `Add more files (${files.length} selected)` : 'Choose PDF or CSV files'}
+      </label>
       <input
         id="statements"
+        ref={fileInputRef}
         name="files"
         className="file-input"
         type="file"
         accept=".pdf,.csv,application/pdf,text/csv"
         multiple
-        required
+        required={files.length === 0}
         onChange={(event) => {
-          const files = Array.from(event.target.files || []);
-          setFileLabel(files.length ? `${files.length} file${files.length === 1 ? '' : 's'} selected` : 'Choose PDF or CSV files');
+          addFiles(Array.from(event.target.files || []));
+          event.target.value = '';
         }}
       />
+      {files.length > 0 && (
+        <ul className="file-list">
+          {files.map((file, index) => (
+            <li key={`${file.name}-${file.size}-${index}`}>
+              <span>{file.name}</span>
+              <button type="button" onClick={() => removeFile(index)} aria-label={`Remove ${file.name}`}>
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
       <p className="file-note">PDF or CSV · up to 6 files · 4 MB total</p>
       <input className="honeypot" type="text" name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" />
       <label className="consent-check">
