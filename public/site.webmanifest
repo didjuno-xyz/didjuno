@@ -1,0 +1,21 @@
+{
+  "name": "didjuno",
+  "short_name": "didjuno",
+  "description": "Know what changed. Know what you're missing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F3E8",
+  "theme_color": "#351B49",
+  "icons": [
+    {
+      "src": "/favicon-primary-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-primary-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
